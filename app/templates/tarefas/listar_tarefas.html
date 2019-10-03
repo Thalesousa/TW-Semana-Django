@@ -2,6 +2,22 @@
 
 {% block conteudo %}
     <h1>Listagem Tarefas</h1>
-    <h2>{{nome_tarefa}}</h2>
+    
+    {% for tarefa in tarefas %}
+    <div class="card mb-3">
+        <div class="card-header">
+            {{tarefa.get_prioridade_display}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{tarefa.titulo}}</h5>
+            <p class="card-text">{{tarefa.descricao}}</p>
+            <hr>
+            <a class = "btn btn-warning" href="{% url 'editar_tarefas' tarefa.id %}">Alterar</a>
+            <a class = "btn btn-danger" href="{% url 'remover_tarefas' tarefa.id %}">Remover</a>
+        </div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'cadastrar_tarefas' %}"><input type="button" value="Cadastrar Tarefa" class="btn btn-primary mb-3"></a>
+        
 {% endblock conteudo %}
     
