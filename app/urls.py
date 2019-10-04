@@ -8,4 +8,5 @@ urlpatterns = [
     path('editar_tarefas/<int:id>',editar_tarefa, name='editar_tarefas'),
     path('remover_tarefas/<int:id>',remover_tarefa, name='remover_tarefas'),
     path('cadastrar_usuario',cadastra_usuario, name='cadastrar_usuario'),
+    path('logar_usuario',logar_usuario, name='logar_usuario'),
 ]
