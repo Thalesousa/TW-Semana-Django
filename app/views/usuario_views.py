@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 def cadastra_usuario(request):
@@ -27,3 +27,8 @@ def logar_usuario(request):
             return redirect('logar_usuario')
     form_login = AuthenticationForm()
     return render(request, 'usuarios/login.html', {'form_login': form_login})
+
+
+def deslogar_usuario(request):
+    logout(request)
+    return redirect('logar_usuario')

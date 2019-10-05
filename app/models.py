@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Tarefa(models.Model):
     PRIORIDADE_CHOICES = [
@@ -10,3 +11,4 @@ class Tarefa(models.Model):
     descricao = models.CharField(max_length=100, blank=False, null=False)
     data_expiracao = models.DateField(null=False, blank= False)
     prioridade = models.CharField(max_length=1, choices=PRIORIDADE_CHOICES, null=False, blank=False)
+    usuario = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
