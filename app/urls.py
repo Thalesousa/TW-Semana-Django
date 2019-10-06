@@ -10,4 +10,5 @@ urlpatterns = [
     path('cadastrar_usuario',cadastra_usuario, name='cadastrar_usuario'),
     path('logar_usuario',logar_usuario, name='logar_usuario'),
     path('deslogar_usuario',deslogar_usuario, name='deslogar_usuario'),
+    path('',listar_tarefas)
 ]
